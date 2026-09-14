@@ -1,0 +1,24 @@
+{
+  "name": "intellegam-business",
+  "owner": {
+    "name": "Intellegam GmbH",
+    "url": "https://www.intellegam.com"
+  },
+  "metadata": {
+    "description": "Intellegam's business plugins for Claude: reporting and analysis automations for partner and client work (IFM Europe / Infomedia).",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "ifm-reporting",
+      "source": "./plugins/ifm-reporting",
+      "description": "Automates IFM Europe / Infomedia's recurring dealer-usage reporting: monthly Superservice Menus (SSM) quotes report + insights layer + half-yearly subscriber analysis, Superservice Triage (SST) client KPI reports and the monthly SST Action Briefing.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Intellegam GmbH"
+      },
+      "category": "productivity",
+      "keywords": ["infomedia", "ifm", "superservice", "ssm", "triage", "sst", "reporting", "automotive", "excel"]
+    }
+  ]
+}

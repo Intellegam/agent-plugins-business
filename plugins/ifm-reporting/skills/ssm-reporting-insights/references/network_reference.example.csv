@@ -1,0 +1,98 @@
+group,brand_label,country_label,franchise,data_countries,network
+Hyundai,Hyundai,Austria,Hyundai,Austria,100
+Hyundai,Hyundai,Belgium,Hyundai,Belgium,100
+Hyundai,Hyundai,Croatia,Hyundai,Croatia,100
+Hyundai,Hyundai,Denmark,Hyundai,Denmark,100
+Hyundai,Hyundai,Estonia,Hyundai,Estonia,100
+Hyundai,Hyundai,Finland,Hyundai,Finland,100
+Hyundai,Hyundai,Greece,Hyundai,Greece,100
+Hyundai,Hyundai,Ireland,Hyundai,Ireland,100
+Hyundai,Hyundai,Latvia,Hyundai,Latvia,100
+Hyundai,Hyundai,Lithuania,Hyundai,Lithuania,100
+Hyundai,Hyundai,Luxembourg,Hyundai,Luxembourg,100
+Hyundai,Hyundai,Netherlands,Hyundai,Netherlands,100
+Hyundai,Hyundai,Norway,Hyundai,Norway,100
+Hyundai,Hyundai,Portugal,Hyundai,Portugal,100
+Hyundai,Hyundai,Spain,Hyundai,Spain,100
+Hyundai,Hyundai,Sweden,Hyundai,Sweden,100
+Hyundai,Hyundai,Switzerland,Hyundai,Switzerland,100
+Isuzu,Isuzu,Belgium,Isuzu,Belgium,100
+Isuzu,Isuzu,Luxembourg,Isuzu,Luxembourg,100
+Isuzu,Isuzu,Sweden,Isuzu,Sweden,100
+Isuzu,Isuzu,United Kingdom,Isuzu,United Kingdom,100
+Kia,Kia,Austria,Kia,Austria,100
+Kia,Kia,Belgium,Kia,Belgium,100
+Kia,Kia,Czech Republic,Kia,Czech Republic,100
+Kia,Kia,Denmark,Kia,Denmark,100
+Kia,Kia,Estonia,Kia,Estonia,100
+Kia,Kia,Finland,Kia,Finland,100
+Kia,Kia,France,Kia,France,100
+Kia,Kia,Germany,Kia,Germany,100
+Kia,Kia,Greece,Kia,Greece,100
+Kia,Kia,Hungary,Kia,Hungary,100
+Kia,Kia,Ireland,Kia,Ireland,100
+Kia,Kia,Italy,Kia,Italy,100
+Kia,Kia,Latvia,Kia,Latvia,100
+Kia,Kia,Lithuania,Kia,Lithuania,100
+Kia,Kia,Luxembourg,Kia,Luxembourg,100
+Kia,Kia,Norway,Kia,Norway,100
+Kia,Kia,Poland,Kia,Poland,100
+Kia,Kia,Portugal,Kia,Portugal,100
+Kia,Kia,Slovak Republic,Kia,Slovak Republic,100
+Kia,Kia,South Africa,Kia,South Africa,100
+Kia,Kia,Spain,Kia,Spain,100
+Kia,Kia,Sweden,Kia,Sweden,100
+Kia,Kia,Switzerland,Kia,Switzerland,100
+Kia,Kia,United Kingdom,Kia,United Kingdom,100
+Mitsubishi,Mitsubishi,Denmark,Mitsubishi,Denmark,100
+Mitsubishi,Mitsubishi,Finland,Mitsubishi,Finland,100
+Mitsubishi,Mitsubishi,Germany,Mitsubishi,Germany,100
+Mitsubishi,Mitsubishi,Sweden,Mitsubishi,Sweden,100
+Mitsubishi,Mitsubishi,United Kingdom,Mitsubishi,United Kingdom,100
+Nissan,Nissan,Austria,Nissan,Austria,100
+Nissan,Nissan,Belgium (RBU),Nissan,Belgium,100
+Nissan,Nissan,Czech Republic,Nissan,Czech Republic,100
+Nissan,Nissan,Denmark (RBU),Nissan,Denmark,100
+Nissan,Nissan,Estonia,Nissan,Estonia,100
+Nissan,Nissan,Finland,Nissan,Finland,100
+Nissan,Nissan,France (RBU),Nissan,France,100
+Nissan,Nissan,Germany (RBU),Nissan,Germany,100
+Nissan,Nissan,Hungary,Nissan,Hungary,100
+Nissan,Nissan,Ireland,Nissan,Ireland,100
+Nissan,Nissan,Italy (RBU),Nissan,Italy,100
+Nissan,Nissan,Latvia,Nissan,Latvia,100
+Nissan,Nissan,Lithuania,Nissan,Lithuania,100
+Nissan,Nissan,Luxembourg (RBU),Nissan,Luxembourg,100
+Nissan,Nissan,Netherlands (RBU),Nissan,Netherlands,100
+Nissan,Nissan,Norway (RBU),Nissan,Norway,100
+Nissan,Nissan,Poland,Nissan,Poland,100
+Nissan,Nissan,Portugal,Nissan,Portugal,100
+Nissan,Nissan,Slovak Republic,Nissan,Slovak Republic,100
+Nissan,Nissan,Spain (RBU),Nissan,Spain,100
+Nissan,Nissan,Sweden (RBU),Nissan,Sweden,100
+Nissan,Nissan,Switzerland,Nissan,Switzerland,100
+Nissan,Nissan,Ukraine (RBU),Nissan,Ukraine,100
+Nissan,Nissan,United Kingdom (RBU),Nissan,United Kingdom,100
+Other Brands,ORA/Havel,Baltic States,Ora,Estonia|Latvia|Lithuania,100
+Other Brands,ORA/Havel,Ireland,Ora,Ireland,100
+Other Brands,ORA/Havel,Sweden,Ora,Sweden,100
+Other Brands,ORA/Havel,United Kingdom,Ora,United Kingdom,100
+Other Brands,Great Wall,United Kingdom,Great Wall,United Kingdom,100
+Other Brands,KGM,Belgium,Ssangyong,Belgium,100
+Other Brands,KGM,Luxembourg,Ssangyong,Luxembourg,100
+Other Brands,Maxus,Belgium,Maxus,Belgium,100
+Other Brands,Maxus,Luxembourg,Maxus,Luxembourg,100
+Other Brands,MG,Belgium,Mg,Belgium,100
+Subaru,Subaru,Denmark,Subaru,Denmark,100
+Subaru,Subaru,Estonia,Subaru,Estonia,100
+Subaru,Subaru,Finland,Subaru,Finland,100
+Subaru,Subaru,Latvia,Subaru,Latvia,100
+Subaru,Subaru,Lithuania,Subaru,Lithuania,100
+Subaru,Subaru,Norway,Subaru,Norway,100
+Subaru,Subaru,Sweden,Subaru,Sweden,100
+Subaru,Subaru,United Kingdom,Subaru,United Kingdom,100
+Suzuki,Suzuki,Belgium,Suzuki,Belgium,100
+Suzuki,Suzuki,Denmark,Suzuki,Denmark,100
+Suzuki,Suzuki,France,Suzuki,France,100
+Suzuki,Suzuki,Luxembourg,Suzuki,Luxembourg,100
+Suzuki,Suzuki,Sweden,Suzuki,Sweden,100

@@ -1,0 +1,9 @@
+pattern,label,note
+\bQA\b,QA accounts,TODO Rob: confirm exact naming convention
+\bTEST\b,Test accounts,TODO Rob: confirm
+\bDEMO\b,Demo accounts,TODO Rob: confirm
+\bTRAINING\b,Training accounts,TODO Rob: confirm
+\bDMS\b,DMS accounts,TODO Rob: confirm
+\bNSC\b,National Sales Company accounts,TODO Rob: confirm
+\bINTERNAL\b,Internal accounts,TODO Rob: confirm
+Infomedia,Infomedia internal,TODO Rob: confirm

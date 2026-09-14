@@ -1,0 +1,12 @@
+{
+ "_note": "EXAMPLE STRUCTURE ONLY. The real validation targets (per-market SSM subscriber counts from the IFM dealer listing) are commercially sensitive and are distributed privately as dealer_qty_targets.json. Known quirk of the original listing: two printed Grand Total cells (Isuzu, Nissan) do not match their own country rows (formula-range errors) — use the per-country values.",
+ "brands": {
+  "ExampleBrand": {
+   "source": "ifm_dealer_listing_<MonYY>",
+   "per_market": {
+    "Austria": 100,
+    "Belgium": 50
+   }
+  }
+ }
+}
