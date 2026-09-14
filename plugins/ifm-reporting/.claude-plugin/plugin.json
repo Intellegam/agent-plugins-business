@@ -1,0 +1,24 @@
+{
+  "name": "ifm-reporting",
+  "version": "0.1.0",
+  "description": "Automates IFM Europe / Infomedia's recurring dealer-usage reporting: the monthly Superservice Menus (SSM) quotes report with its insights layer and half-yearly subscriber analysis, plus the Superservice Triage (SST) client KPI reports and the monthly SST Action Briefing.",
+  "author": {
+    "name": "Intellegam GmbH",
+    "url": "https://www.intellegam.com"
+  },
+  "homepage": "https://github.com/Intellegam/agent-plugins-business/tree/main/plugins/ifm-reporting",
+  "repository": "https://github.com/Intellegam/agent-plugins-business",
+  "license": "Proprietary",
+  "keywords": [
+    "infomedia",
+    "ifm",
+    "superservice",
+    "ssm",
+    "triage",
+    "sst",
+    "reporting",
+    "automotive",
+    "dealer-usage",
+    "excel"
+  ]
+}

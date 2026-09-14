@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>INTELLEGAM — Monthly Action Briefing · July 2026</title>
+{{CSS}}
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--font-sans); }
+
+  /* ---- sticky nav ---- */
+  .nav { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(8px); border-bottom: var(--hairline);
+    display: flex; align-items: center; gap: 8px; padding: 14px 32px; }
+  .nav__mark { height: 20px; margin-right: 20px; }
+  .nav a { font-size: 13px; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none;
+    color: var(--fg-subtle); padding: 8px 14px; border-radius: 6px; transition: color .15s, background .15s; }
+  .nav__spacer { flex: 1; }
+  .nav__meta { font-size: 12px; color: var(--fg-subtle); letter-spacing: 0.04em; text-transform: uppercase; }
+
+  .wrap { max-width: 1160px; margin: 0 auto; padding: 0 32px; }
+  section { scroll-margin-top: 76px; }
+
+  /* ---- hero ---- */
+  .hero { background: var(--ink-900); color: var(--fg-inverse); padding: 110px 0 100px; }
+  .hero .eyebrow { color: rgba(255,255,255,0.6); font-size: 15px; margin: 0 0 20px; }
+  .hero h1 { font-family: var(--font-display); font-weight: 500; font-size: clamp(52px, 8vw, 96px);
+    line-height: 1.02; letter-spacing: -0.02em; margin: 0; }
+  .hero p { font-size: 20px; line-height: 1.55; color: rgba(255,255,255,0.7); max-width: 720px; margin: 28px 0 0; }
+  .hero__mark { height: 26px; margin-bottom: 56px; display: block; }
+
+  /* ---- statement bands ---- */
+  .band { padding: 88px 0; }
+  .band--dark { background: var(--ink-900); color: var(--fg-inverse); }
+  .statement { font-family: var(--font-display); font-weight: 500; font-size: clamp(28px, 4vw, 44px);
+    line-height: 1.25; letter-spacing: -0.01em; max-width: 980px; margin: 0; }
+  .statement .reframe { color: var(--accent); }
+  .band--dark .statement .reframe { color: #9E85FF; }
+
+  /* ---- sections ---- */
+  .sec { padding: 88px 0; border-top: var(--hairline); }
+  .sec--sunken { background: var(--bg-sunken); }
+  .sec .eyebrow { font-size: 14px; margin: 0 0 16px; }
+  .sec h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(34px, 4.6vw, 52px);
+    line-height: 1.08; letter-spacing: -0.015em; margin: 0 0 10px; }
+  .sec .lede { font-size: 18px; line-height: 1.55; color: var(--fg-muted); max-width: 760px; margin: 14px 0 0; }
+
+  .data { display: grid; grid-template-columns: 1fr 260px; gap: 44px; margin-top: 44px; align-items: start; }
+  @media (max-width: 900px){ .data { grid-template-columns: 1fr; } }
+  table.kpi { width: 100%; border-collapse: collapse; }
+  table.kpi th { text-align: left; font-weight: 500; font-size: 12.5px; letter-spacing: 0.05em;
+    text-transform: uppercase; color: var(--fg-subtle); padding: 0 0 12px; border-bottom: var(--hairline); }
+  table.kpi td { font-size: 16.5px; padding: 14px 0; border-bottom: var(--hairline); }
+  table.kpi tr:last-child td { border-bottom: none; }
+  table.kpi td.num { font-family: var(--font-mono); font-weight: 500; text-align: right; white-space: nowrap; }
+
+  .callouts { display: flex; flex-direction: column; gap: 16px; }
+  @media (max-width: 900px){ .callouts { flex-direction: row; flex-wrap: wrap; } }
+  .callout { border: var(--hairline); border-radius: var(--radius-lg); padding: 20px 22px; background: var(--bg); }
+  .callout__l { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--fg-subtle); }
+  .callout__v { font-family: var(--font-display); font-weight: 600; font-size: 34px; line-height: 1.05; margin-top: 8px; }
+  .callout--accent { border-color: var(--accent); }
+  .callout--accent .callout__v { color: var(--accent); }
+
+  /* ---- what to do (static) ---- */
+  .action-static { margin-top: 36px; border-top: 2px solid var(--accent); }
+  .action-static__l { padding: 18px 0 8px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--accent); font-weight: 600; }
+  .action-static .action__b { font-size: 17.5px; line-height: 1.6; color: var(--fg); max-width: 920px; padding: 0 0 22px; }
+
+  /* ---- trend bars (KMUK) ---- */
+  .trends { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
+  @media (max-width: 800px){ .trends { grid-template-columns: 1fr; } }
+  .trend h4 { font-family: var(--font-display); font-weight: 600; font-size: 19px; margin: 0 0 4px; }
+  .trend .delta-down { color: #C43C3C; font-weight: 600; }
+  .trend .delta-up { color: #1B7F3B; font-weight: 600; }
+  .bars { display: flex; gap: 6px; align-items: flex-end; height: 96px; margin-top: 14px; }
+  .bars .bar { flex: 1; max-width: 56px; border-radius: 5px 5px 0 0; position: relative;
+    background: var(--accent); opacity: .9; }
+  .bars .bar::after { content: attr(data-v); position: absolute; bottom: calc(100% + 4px); left: 50%;
+    transform: translateX(-50%); color: var(--fg-muted); font-size: 11px; font-family: var(--font-mono);
+    white-space: nowrap; }
+  .bars-x { display: flex; gap: 6px; margin-top: 6px; }
+  .bars-x span { flex: 1; max-width: 56px; text-align: center; font-size: 11px; color: var(--fg-subtle);
+    font-family: var(--font-mono); }
+  .trend .note { font-size: 14.5px; color: var(--fg-muted); line-height: 1.5; margin-top: 14px; }
+
+
+  /* ---- top5/worst5 detail blocks ---- */
+  .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; margin-top: 40px; }
+  @media (max-width: 900px){ .duo { grid-template-columns: 1fr; } }
+  .duo h5 { margin: 0 0 10px; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
+  .duo h5.t-top { color: #1B7F3B; } .duo h5.t-worst { color: #C43C3C; }
+  table.mini { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+  table.mini th { text-align: left; font-weight: 500; font-size: 11px; letter-spacing: 0.05em;
+    text-transform: uppercase; color: var(--fg-subtle); padding: 0 0 8px; border-bottom: var(--hairline); }
+  table.mini td { padding: 9px 0; border-bottom: var(--hairline); vertical-align: top; }
+  table.mini tr:last-child td { border-bottom: none; }
+  table.mini td.num { font-family: var(--font-mono); text-align: right; white-space: nowrap; }
+  table.mini td.sm { font-size: 12.5px; color: var(--fg-muted); }
+
+  /* ---- phases ---- */
+  .points { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; margin-top: 48px; }
+  @media (max-width: 900px){ .points { grid-template-columns: 1fr; } }
+  .point { border-top: 2px solid var(--accent); padding-top: 18px; }
+  .point__n { font-family: var(--font-mono); font-size: 13px; color: var(--fg-subtle); }
+  .point__h { font-family: var(--font-display); font-weight: 600; font-size: 22px; line-height: 1.2; margin: 10px 0 10px; }
+  .point__b { font-size: 15.5px; line-height: 1.55; color: var(--fg-muted); }
+
+  /* ---- footer ---- */
+  .foot { background: var(--ink-900); color: rgba(255,255,255,0.7); padding: 72px 0; }
+  .foot__mark { height: 34px; display: block; margin-bottom: 24px; }
+  .foot p { font-size: 15px; line-height: 1.7; margin: 6px 0 0; }
+  .foot .fine { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 28px; }
+</style>
+</head>
+<!-- SYNTHETIC EXAMPLE: dealer names replaced with placeholders and all figures scrambled for the public repository; only structure and styling are canonical. -->
+<body>
+
+<nav class="nav">
+  <img class="nav__mark" src="{{LOGO_LIGHT}}" alt="INTELLEGAM">
+  <a href="#opp1">Unsold work</a>
+  <a href="#trend">Trend</a>
+  <a href="#opp2">Banding</a>
+  <a href="#opp3">Adoption</a>
+  <a href="#opp4">Churn</a>
+  <a href="#plan">Steering</a>
+  <span class="nav__spacer"></span>
+  <span class="nav__meta">Monthly action briefing · July 2026</span>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <img class="hero__mark" src="{{LOGO_DARK}}" alt="INTELLEGAM">
+    <p class="eyebrow">Monthly action briefing · Triage/SST dealer data</p>
+    <h1>July 2026.</h1>
+    <p>One month, five networks: Toyota Belgium, Toyota Ireland, Kia UK, Nissan Germany, Mitsubishi UK — the top and worst five dealers named, one steering action per lever.</p>
+  </div>
+</header>
+
+<div class="band band--dark">
+  <div class="wrap">
+    <p class="statement">In July, €100.46M of identified work went unsold across Toyota Belgium and Ireland alone — <span class="reframe">the lists below name exactly where it sits.</span></p>
+  </div>
+</div>
+
+<!-- ===== MONEY ===== -->
+<section class="sec" id="opp1">
+  <div class="wrap">
+    <p class="eyebrow">Lever 1 · Unsold identified work — July</p>
+    <h2>Money on the table.</h2>
+    <p class="lede">Work the dealers identified on the vehicle health check in July and did not sell. Toyota Ireland converts barely half; five Belgian dealers prove 100&nbsp;% is possible.</p>
+    <div class="data">
+      <table class="kpi">
+        <thead><tr><th>Network · July</th><th style="text-align:right">Identified</th><th style="text-align:right">Unsold</th><th style="text-align:right">Share unsold</th></tr></thead>
+        <tbody>
+          <tr><td>Example Dealer 01</td><td class="num">€4,099,400</td><td class="num">€1,825,600</td><td class="num">44%</td></tr>
+          <tr><td>Example Dealer 02</td><td class="num">€4,628,900</td><td class="num">€419,700</td><td class="num">19%</td></tr>
+          <tr><td>Example Dealer 03</td><td class="num">£140,200</td><td class="num">£122,300</td><td class="num">60%</td></tr>
+        </tbody>
+      </table>
+      <div class="callouts">
+        <div class="callout callout--accent"><div class="callout__l">Unsold in July, Toyota alone</div><div class="callout__v">€100.46M</div></div>
+        <div class="callout"><div class="callout__l">Proven in-network</div><div class="callout__v">100% sold</div></div>
+      </div>
+    </div>
+
+    <h4 style="font-family:var(--font-display);font-weight:600;font-size:20px;margin:48px 0 0">Toyota Ireland · July</h4>
+    <div><div class="duo"><div><h5 class="t-top">Top 5 — best converters (volume > €100k)</h5><table class="mini"><thead><tr><th>Dealer</th><th style="text-align:right">% sold</th><th style="text-align:right">Identified</th></tr></thead><tbody><tr><td>Example Dealer 04</td><td class='num'>93%</td><td class='num'>€119,700</td></tr><tr><td>Example Dealer 05</td><td class='num'>92%</td><td class='num'>€77,700</td></tr><tr><td>Example Dealer 06</td><td class='num'>87%</td><td class='num'>€233,900</td></tr><tr><td>Example Dealer 07</td><td class='num'>86%</td><td class='num'>€121,100</td></tr><tr><td>Example Dealer 08</td><td class='num'>80%</td><td class='num'>€161,800</td></tr></tbody></table></div><div><h5 class="t-worst">Worst 5 — most € left on the table in July</h5><table class="mini"><thead><tr><th>Dealer</th><th style="text-align:right">Unsold €</th><th style="text-align:right">% sold</th></tr></thead><tbody><tr><td>Example Dealer 09</td><td class='num'>€141,100</td><td class='num'>22%</td></tr><tr><td>Example Dealer 10</td><td class='num'>€189,800</td><td class='num'>44%</td></tr><tr><td>Example Dealer 11</td><td class='num'>€65,800</td><td class='num'>51%</td></tr><tr><td>Example Dealer 12</td><td class='num'>€115,200</td><td class='num'>56%</td></tr><tr><td>Example Dealer 13</td><td class='num'>€83,900</td><td class='num'>36%</td></tr></tbody></table></div></div></div>
+
+    <h4 style="font-family:var(--font-display);font-weight:600;font-size:20px;margin:44px 0 0">Toyota Belgium · July</h4>
+    <div><div class="duo"><div><h5 class="t-top">Top 5 — best converters (volume > €100k)</h5><table class="mini"><thead><tr><th>Dealer</th><th style="text-align:right">% sold</th><th style="text-align:right">Identified</th></tr></thead><tbody><tr><td>Example Dealer 14</td><td class='num'>100%</td><td class='num'>€29,500</td></tr><tr><td>Example Dealer 15</td><td class='num'>100%</td><td class='num'>€128,600</td></tr><tr><td>Example Dealer 16</td><td class='num'>100%</td><td class='num'>€65,900</td></tr><tr><td>Example Dealer 17</td><td class='num'>100%</td><td class='num'>€19,500</td></tr><tr><td>Example Dealer 18</td><td class='num'>100%</td><td class='num'>€70,300</td></tr></tbody></table></div><div><h5 class="t-worst">Worst 5 — most € left on the table in July</h5><table class="mini"><thead><tr><th>Dealer</th><th style="text-align:right">Unsold €</th><th style="text-align:right">% sold</th></tr></thead><tbody><tr><td>Example Dealer 19</td><td class='num'>€142,000</td><td class='num'>48%</td></tr><tr><td>Example Dealer 20</td><td class='num'>€114,400</td><td class='num'>47%</td></tr><tr><td>Example Dealer 21</td><td class='num'>€92,100</td><td class='num'>45%</td></tr><tr><td>Example Dealer 22</td><td class='num'>€44,600</td><td class='num'>37%</td></tr><tr><td>Example Dealer 23</td><td class='num'>€26,100</td><td class='num'>52%</td></tr></tbody></table></div></div></div>
+
+    <h4 style="font-family:var(--font-display);font-weight:600;font-size:20px;margin:44px 0 0">Kia UK · July — all five dealers</h4>
+    <div style="max-width:640px"><table class="mini"><thead><tr><th>Dealer</th><th style="text-align:right">% sold</th><th style="text-align:right">Unsold £</th></tr></thead><tbody><tr><td>Example Dealer 24</td><td class='num'>22%</td><td class='num'>£38,100</td></tr><tr><td>Example Dealer 25</td><td class='num'>71%</td><td class='num'>£24,900</td></tr><tr><td>Example Dealer 26</td><td class='num'>22%</td><td class='num'>£15,800</td></tr><tr><td>Example Dealer 27</td><td class='num'>26%</td><td class='num'>£14,800</td></tr><tr><td>Example Dealer 28</td><td class='num'>24%</td><td class='num'>£12,000</td></tr></tbody></table></div>
+
+    <div class="action-static">
+      <div class="action-static__l">What to do in August</div>
+      <div class="action__b">Denis Mahony M50 (€200k), Toyota Liffey Valley (€100k) and Toyota City Zaventem (€100k) are the first three follow-up conversations of the month — together they carry €500k of already-identified work. Hand each account manager the worst-5 list; review against the August edition which names have moved off it.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TREND ===== -->
+<section class="sec sec--sunken" id="trend">
+  <div class="wrap">
+    <p class="eyebrow">Kia UK · % of identified work sold, Feb → Jul</p>
+    <h2>The July number in context.</h2>
+    <div class="trends">
+      <div class="trend">
+        <h4>Example Dealer A <span class="delta-down">▼ −9.9 pp since Feb</span></h4>
+        <div class="bars">
+          <div class="bar" style="height:91%" data-v="31.5"></div><div class="bar" style="height:70%" data-v="24.2"></div>
+          <div class="bar" style="height:92%" data-v="31.9"></div><div class="bar" style="height:63%" data-v="21.9"></div>
+          <div class="bar" style="height:45%" data-v="15.5"></div><div class="bar" style="height:62%" data-v="21.6"></div>
+        </div>
+        <div class="bars-x"><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span></div>
+        <div class="note">July's 21.6&nbsp;% is a slight recovery from June's low — but still 10&nbsp;pp under February. £39,100 unsold in July.</div>
+      </div>
+      <div class="trend">
+        <h4>Example Dealer B <span class="delta-up">▲ +5.3 pp since Feb</span></h4>
+        <div class="bars">
+          <div class="bar" style="height:78%" data-v="65.5"></div><div class="bar" style="height:76%" data-v="63.5"></div>
+          <div class="bar" style="height:79%" data-v="65.8"></div><div class="bar" style="height:82%" data-v="68.2"></div>
+          <div class="bar" style="height:87%" data-v="72.9"></div><div class="bar" style="height:85%" data-v="70.8"></div>
+        </div>
+        <div class="bars-x"><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span></div>
+        <div class="note">70.8&nbsp;% in July — the in-network benchmark the other four Kia dealers are coached against.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BANDING ===== -->
+<section class="sec" id="opp2">
+  <div class="wrap">
+    <p class="eyebrow">Lever 2 · Nissan Germany banding — July</p>
+    <h2>A network capped at 80.</h2>
+    <p class="lede">Two of the ten scorecard criteria failed for every single dealer in July — nobody can reach Band A until they move.</p>
+    <div class="data">
+      <table class="kpi">
+        <thead><tr><th>July finding</th><th style="text-align:right">Dealers</th></tr></thead>
+        <tbody>
+          <tr><td>Fail “Send-Inspection &gt; 3” — the report never reaches the customer</td><td class="num">191 / 191</td></tr>
+          <tr><td>Example Dealer 29</td><td class="num">191 / 191</td></tr>
+          <tr><td>Example Dealer 30</td><td class="num">156</td></tr>
+          <tr><td>Example Dealer 31</td><td class="num">4</td></tr>
+        </tbody>
+      </table>
+      <div class="callouts">
+        <div class="callout callout--accent"><div class="callout__l">Max score reachable in July</div><div class="callout__v">80 / 100</div></div>
+        <div class="callout"><div class="callout__l">Best dealer (Möller)</div><div class="callout__v">80</div></div>
+      </div>
+    </div>
+    <div class="duo"><div><h5 class="t-top">Top 5 — closest to the next band (coach these first)</h5><table class="mini"><thead><tr><th>Dealer</th><th style="text-align:right">Score</th><th>What's missing</th></tr></thead><tbody><tr><td>Example Dealer 32</td><td class='num'>80</td><td class='sm'>Example Dealer 33</td></tr><tr><td>Example Dealer 34</td><td class='num'>60</td><td class='sm'>Example Dealer 35</td></tr><tr><td>Example Dealer 36</td><td class='num'>60</td><td class='sm'>Example Dealer 35</td></tr><tr><td>Example Dealer 37</td><td class='num'>60</td><td class='sm'>Example Dealer 38</td></tr><tr><td>Example Dealer 39</td><td class='num'>50</td><td class='sm'>Example Dealer 40</td></tr></tbody></table></div><div><h5 class="t-worst">Worst 5 — score 0 despite real volume</h5><table class="mini"><thead><tr><th>Dealer</th><th style="text-align:right">Score</th><th style="text-align:right">Throughput</th></tr></thead><tbody><tr><td>Example Dealer 41</td><td class='num'>0</td><td class='num'>33</td></tr><tr><td>Example Dealer 42</td><td class='num'>0</td><td class='num'>30</td></tr><tr><td>Example Dealer 43</td><td class='num'>0</td><td class='num'>28</td></tr><tr><td>Example Dealer 44</td><td class='num'>0</td><td class='num'>27</td></tr><tr><td>Example Dealer 45</td><td class='num'>0</td><td class='num'>26</td></tr></tbody></table></div></div>
+    <div class="action-static">
+      <div class="action-static__l">What to do in August</div>
+      <div class="action__b">Verify the Send-Inspection and Follow-up data mapping with NCE before the August report goes out. If the numbers hold, those two behaviours become the network training topic of the quarter — and Möller needs exactly one fixed criterion to become the network's first Band-A dealer.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ADOPTION ===== -->
+<section class="sec sec--sunken" id="opp3">
+  <div class="wrap">
+    <p class="eyebrow">Lever 3 · Feature adoption — Toyota Belgium, July</p>
+    <h2>Identified, but never sent.</h2>
+    <p class="lede">84 Belgian dealers were active in July. Most complete their checks — and then the findings never leave the workshop.</p>
+    <div class="data">
+      <table class="kpi">
+        <thead><tr><th>Adoption gap · July</th><th style="text-align:right">Dealers</th></tr></thead>
+        <tbody>
+          <tr><td>Active (&gt;10 jobs) but zero eVHCs completed</td><td class="num">14 / 84</td></tr>
+          <tr><td>Example Dealer 46</td><td class="num">60</td></tr>
+          <tr><td>Example Dealer 47</td><td class="num">59</td></tr>
+        </tbody>
+      </table>
+      <div class="callouts">
+        <div class="callout callout--accent"><div class="callout__l">Never send the report</div><div class="callout__v">71%</div></div>
+        <div class="callout"><div class="callout__l">Never use video</div><div class="callout__v">70%</div></div>
+      </div>
+    </div>
+    <div class="duo"><div><h5 class="t-top">Top 5 — completion benchmark in-network</h5><table class="mini"><thead><tr><th>Dealer</th><th style="text-align:right">eVHCs completed</th><th style="text-align:right">Completion rate</th></tr></thead><tbody><tr><td>Example Dealer 48</td><td class='num'>103</td><td class='num'>100%</td></tr><tr><td>Example Dealer 49</td><td class='num'>245</td><td class='num'>100%</td></tr><tr><td>Example Dealer 50</td><td class='num'>217</td><td class='num'>100%</td></tr><tr><td>Example Dealer 16</td><td class='num'>98</td><td class='num'>99%</td></tr><tr><td>Example Dealer 51</td><td class='num'>129</td><td class='num'>98%</td></tr></tbody></table></div><div><h5 class="t-worst">Worst 5 — silent despite highest volume (call first)</h5><table class="mini"><thead><tr><th>Dealer</th><th style="text-align:right">Jobs in July</th><th style="text-align:right">eVHCs completed</th></tr></thead><tbody><tr><td>Example Dealer 52</td><td class='num'>383</td><td class='num'>0</td></tr><tr><td>Example Dealer 53</td><td class='num'>381</td><td class='num'>0</td></tr><tr><td>Example Dealer 54</td><td class='num'>323</td><td class='num'>0</td></tr><tr><td>Example Dealer 55</td><td class='num'>237</td><td class='num'>0</td></tr><tr><td>Example Dealer 56</td><td class='num'>226</td><td class='num'>0</td></tr></tbody></table></div></div>
+    <div class="action-static">
+      <div class="action-static__l">What to do in August</div>
+      <div class="action__b">Toyota Brussels by ACB ran 383 jobs in July without completing a single eVHC — that is the first call. Then the send-inspection gap: 60 dealers identify work the customer never sees, which is why 19&nbsp;% of Belgian work goes unsold. Sending the report is the cheapest conversion lever on this page.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CHURN ===== -->
+<section class="sec" id="opp4">
+  <div class="wrap">
+    <p class="eyebrow">Lever 4 · Log-in activity — Mitsubishi UK, July</p>
+    <h2>Quiet dealers, early.</h2>
+    <p class="lede">105 dealers on SSM. July looks healthy — 42 increasing — but 28 are sliding and four have gone silent.</p>
+    <div class="data">
+      <table class="kpi">
+        <thead><tr><th>Log-in trend · July</th><th style="text-align:right">Dealers</th></tr></thead>
+        <tbody>
+          <tr><td>Example Dealer 57</td><td class="num">42</td></tr>
+          <tr><td>Example Dealer 58</td><td class="num">28</td></tr>
+          <tr><td>Example Dealer 59</td><td class="num">4</td></tr>
+        </tbody>
+      </table>
+      <div class="callouts">
+        <div class="callout callout--accent"><div class="callout__l">At risk (stopped + decreasing)</div><div class="callout__v">30%</div></div>
+        <div class="callout"><div class="callout__l">Calls needed this month</div><div class="callout__v">4</div></div>
+      </div>
+    </div>
+    <div class="duo"><div><h5 class="t-top">Top 5 — most active dealers</h5><table class="mini"><thead><tr><th>Dealer</th><th style="text-align:right">Logins · weeks −3 / −2 / last / this</th></tr></thead><tbody><tr><td>Example Dealer 60</td><td class='sm num'>Example Dealer 61</td></tr><tr><td>Example Dealer 62</td><td class='sm num'>Example Dealer 63</td></tr><tr><td>Example Dealer 64</td><td class='sm num'>Example Dealer 65</td></tr><tr><td>Example Dealer 66</td><td class='sm num'>Example Dealer 67</td></tr><tr><td>Example Dealer 68</td><td class='sm num'>Example Dealer 69</td></tr></tbody></table></div><div><h5 class="t-worst">Worst 5 — stopped dealers (July contact list)</h5><table class="mini"><thead><tr><th>Dealer</th><th style="text-align:right">Logins · weeks −3 / −2 / last / this</th></tr></thead><tbody><tr><td>Example Dealer 70</td><td class='sm num'>Example Dealer 71</td></tr><tr><td>Example Dealer 72</td><td class='sm num'>Example Dealer 73</td></tr><tr><td>Example Dealer 74</td><td class='sm num'>Example Dealer 73</td></tr><tr><td>Example Dealer 75</td><td class='sm num'>Example Dealer 73</td></tr></tbody></table></div></div>
+    <div class="action-static">
+      <div class="action-static__l">What to do in August</div>
+      <div class="action__b">Four calls close the stopped list — Ashford Mitsubishi first. The 28 decreasing dealers are next month's stopped list if nothing happens: pick the ten with the steepest slide and add them to the outreach.</div>
+    </div>
+  </div>
+</section>
+
+<div class="band band--dark">
+  <div class="wrap">
+    <p class="statement">Every list on this page regenerates next month — <span class="reframe">who moves off it is the steering signal.</span></p>
+  </div>
+</div>
+
+<!-- ===== STEERING ===== -->
+<section class="sec" id="plan">
+  <div class="wrap">
+    <p class="eyebrow">One list per lever · every month · one owner</p>
+    <h2>How to steer.</h2>
+    <p class="lede">Each lever is one monthly list with a named owner and one metric that must move by the August edition.</p>
+    <div style="margin-top:44px">
+      <table class="kpi">
+        <thead><tr><th>Lever</th><th>July list</th><th>Owner</th><th style="text-align:right">Move by August</th></tr></thead>
+        <tbody>
+          <tr><td><b>Unsold work</b></td><td>Worst-5 per network — Mahony M50, Liffey Valley, Zaventem first</td><td>Example Dealer 76</td><td class="num">T-IRE 56% → 60%+ sold</td></tr>
+          <tr><td><b>Banding</b></td><td>NCE mapping check + near-miss coaching (Möller, Jung, Braunschläger, Fischer)</td><td>Example Dealer 77</td><td class="num">first dealer above 80</td></tr>
+          <tr><td><b>Adoption</b></td><td>TBEL: Brussels/Willy Kontich zero-eVHC calls, then send-inspection push</td><td>Example Dealer 78</td><td class="num">14 silent → &lt;10</td></tr>
+          <tr><td><b>Churn</b></td><td>Example Dealer 79</td><td>Example Dealer 80</td><td class="num">4 / 4 contacted</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="action-static">
+      <div class="action-static__l">The monthly rhythm</div>
+      <div class="action__b">This edition is worked through during August; the August edition then shows the movement — who left the worst-5, which silent dealers woke up, whether Möller crossed 80. Movement between editions, not the absolute numbers, is the steering signal.</div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <img class="foot__mark" src="{{LOGO_DARK}}" alt="INTELLEGAM">
+    <p>July 2026 — the monthly dealer data, read as a steering instrument.</p>
+    <p>INTELLEGAM GmbH · www.intellegam.com</p>
+    <p class="fine">© 2026 INTELLEGAM GmbH · Sources: TIre_SST_KPI July 2026 · TBEL_SST_KPI July 2026 · KMUK_Triage_KPI_2026 (Jul tab, Feb–Jul series) · Banding Report July 2026 · MMUK log-in activity July 2026. Not in this edition (no July extract yet): Hyundai Ireland, Nissan BeLux/Baltics/Europe, eNEST, Chapelhouse — they join the August edition.</p>
+  </div>
+</footer>
+</body>
+</html>

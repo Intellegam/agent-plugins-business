@@ -1,0 +1,303 @@
+/* =============================================================
+   INTELLEGAM — Design Tokens
+   Color, typography, spacing, radius, shadow, motion.
+   Brand stance: black + white + one precise accent. No hype.
+   ============================================================= */
+
+/* ---- Fonts — Geist (body/mono) from CDN; must come before @font-face ---- */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap');
+
+/* ---- Fonts — Montserrat (brand display) self-hosted ---- */
+@font-face { font-family: 'Montserrat'; src: url('fonts/Montserrat-Thin.ttf') format('truetype'); font-weight: 100; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Montserrat'; src: url('fonts/Montserrat-ThinItalic.ttf') format('truetype'); font-weight: 100; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Montserrat'; src: url('fonts/Montserrat-ExtraLight.ttf') format('truetype'); font-weight: 200; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Montserrat'; src: url('fonts/Montserrat-ExtraLightItalic.ttf') format('truetype'); font-weight: 200; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Montserrat'; src: url('fonts/Montserrat-Light.ttf') format('truetype'); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Montserrat'; src: url('fonts/Montserrat-LightItalic.ttf') format('truetype'); font-weight: 300; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Montserrat'; src: url('fonts/Montserrat-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Montserrat'; src: url('fonts/Montserrat-Italic.ttf') format('truetype'); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Montserrat'; src: url('fonts/Montserrat-Medium.ttf') format('truetype'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Montserrat'; src: url('fonts/Montserrat-MediumItalic.ttf') format('truetype'); font-weight: 500; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Montserrat'; src: url('fonts/Montserrat-SemiBold.ttf') format('truetype'); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Montserrat'; src: url('fonts/Montserrat-SemiBoldItalic.ttf') format('truetype'); font-weight: 600; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Montserrat'; src: url('fonts/Montserrat-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Montserrat'; src: url('fonts/Montserrat-BoldItalic.ttf') format('truetype'); font-weight: 700; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Montserrat'; src: url('fonts/Montserrat-ExtraBold.ttf') format('truetype'); font-weight: 800; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Montserrat'; src: url('fonts/Montserrat-ExtraBoldItalic.ttf') format('truetype'); font-weight: 800; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Montserrat'; src: url('fonts/Montserrat-Black.ttf') format('truetype'); font-weight: 900; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Montserrat'; src: url('fonts/Montserrat-BlackItalic.ttf') format('truetype'); font-weight: 900; font-style: italic; font-display: swap; }
+
+:root {
+  /* =========================================================
+     COLOR — Neutral scale (stark, precise, not warm)
+     ========================================================= */
+  --ink-0:    #FFFFFF;  /* pure white — primary surface */
+  --ink-50:   #FAFAFA;  /* page wash */
+  --ink-100:  #F4F4F5;  /* subtle fill */
+  --ink-200:  #E7E7EA;  /* hairline / divider */
+  --ink-300:  #D1D1D6;  /* disabled border */
+  --ink-400:  #9A9AA2;  /* muted text */
+  --ink-500:  #6B6B73;  /* secondary text */
+  --ink-600:  #3F3F46;  /* heavy text */
+  --ink-700:  #27272A;  /* near-black surface */
+  --ink-800:  #18181B;  /* elevated dark */
+  --ink-900:  #0A0A0A;  /* primary ink — black */
+
+  /* =========================================================
+     COLOR — Accent
+     Derived from the pink node in the brand mark, pushed
+     toward a more precise, automotive-grade magenta.
+     Used sparingly: CTAs, live signals, critical status only.
+     ========================================================= */
+  --accent:       #653DE1;  /* primary accent — "Signal" (from brand-mark connector) */
+  --accent-hover: #5530C7;
+  --accent-press: #4323A3;
+  --accent-tint:  #ECE7FB;  /* light wash for backgrounds */
+  --accent-ring:  rgba(101, 61, 225, 0.24);
+
+  /* =========================================================
+     COLOR — Semantic (muted; never competing with accent)
+     ========================================================= */
+  --success: #0E8A4F;
+  --success-tint: #E6F4EC;
+  --warning: #B4730C;
+  --warning-tint: #FBF1DE;
+  --danger:  #B42318;  /* distinct from accent; for destructive only */
+  --danger-tint: #FEE4E2;
+  --info:    #18181B;  /* we use ink for info — no blue */
+  --info-tint: #F4F4F5;
+
+  /* =========================================================
+     SURFACES — foreground/background semantic roles
+     ========================================================= */
+  --bg:        var(--ink-0);
+  --bg-sunken: var(--ink-50);
+  --bg-raised: var(--ink-0);
+  --bg-inverse: var(--ink-900);
+
+  --fg:        var(--ink-900);   /* primary text */
+  --fg-muted:  var(--ink-500);   /* secondary */
+  --fg-subtle: var(--ink-400);   /* tertiary / placeholder */
+  --fg-inverse: var(--ink-0);
+
+  --border:         var(--ink-200);
+  --border-strong:  var(--ink-300);
+  --border-inverse: var(--ink-700);
+
+  /* =========================================================
+     TYPOGRAPHY — Font families
+     ========================================================= */
+  --font-display: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  --font-sans:    'Geist', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono:    'Geist Mono', 'JetBrains Mono', ui-monospace, Menlo, monospace;
+
+  /* =========================================================
+     TYPOGRAPHY — Scale (precise, not elastic)
+     Uses slightly tightened tracking for the uppercase look
+     consistent with the wordmark.
+     ========================================================= */
+  --text-xs:   12px;
+  --text-sm:   13px;
+  --text-base: 15px;
+  --text-md:   17px;
+  --text-lg:   20px;
+  --text-xl:   24px;
+  --text-2xl:  32px;
+  --text-3xl:  44px;
+  --text-4xl:  60px;
+  --text-5xl:  84px;
+
+  --lh-tight:  1.05;
+  --lh-snug:   1.2;
+  --lh-normal: 1.45;
+  --lh-relaxed: 1.6;
+
+  --track-tight:   -0.02em;
+  --track-snug:    -0.01em;
+  --track-normal:  0;
+  --track-wide:    0.02em;
+  --track-caps:    0.08em;   /* for small-caps labels, section eyebrows */
+
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+
+  /* =========================================================
+     SPACING — 4px base; disciplined
+     ========================================================= */
+  --space-0:   0;
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   20px;
+  --space-6:   24px;
+  --space-8:   32px;
+  --space-10:  40px;
+  --space-12:  48px;
+  --space-16:  64px;
+  --space-20:  80px;
+  --space-24:  96px;
+  --space-32:  128px;
+
+  /* =========================================================
+     RADIUS — Sharp by default. Rounding is a deliberate choice.
+     ========================================================= */
+  --radius-none: 0;
+  --radius-xs:   2px;
+  --radius-sm:   4px;
+  --radius-md:   6px;
+  --radius-lg:   10px;
+  --radius-xl:   14px;
+  --radius-full: 9999px;
+
+  /* =========================================================
+     BORDER — Hairline is the default vocabulary.
+     ========================================================= */
+  --hairline: 1px solid var(--border);
+  --hairline-strong: 1px solid var(--border-strong);
+  --hairline-inverse: 1px solid var(--border-inverse);
+
+  /* =========================================================
+     SHADOW — Restrained. Elevation is rarely visual; usually
+     achieved with hairlines.
+     ========================================================= */
+  --shadow-none:  none;
+  --shadow-xs:    0 1px 0 rgba(10,10,10,0.04);
+  --shadow-sm:    0 1px 2px rgba(10,10,10,0.06), 0 0 0 1px rgba(10,10,10,0.04);
+  --shadow-md:    0 4px 12px rgba(10,10,10,0.06), 0 0 0 1px rgba(10,10,10,0.04);
+  --shadow-lg:    0 16px 40px rgba(10,10,10,0.10), 0 0 0 1px rgba(10,10,10,0.04);
+  --shadow-focus: 0 0 0 3px var(--accent-ring);
+
+  /* =========================================================
+     MOTION — Quiet, mechanical. No bounce.
+     ========================================================= */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-out:      cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:       cubic-bezier(0.4, 0, 1, 1);
+  --duration-fast:   120ms;
+  --duration-base:   180ms;
+  --duration-slow:   280ms;
+
+  /* =========================================================
+     LAYOUT
+     ========================================================= */
+  --container-max: 1280px;
+  --container-gutter: 48px;
+}
+
+/* =========================================================
+   SEMANTIC TYPE CLASSES — use these in HTML directly
+   ========================================================= */
+.display-1 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-medium);
+  font-size: var(--text-5xl);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--track-tight);
+  color: var(--fg);
+}
+.display-2 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-medium);
+  font-size: var(--text-4xl);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--track-tight);
+  color: var(--fg);
+}
+.h1 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-semibold);
+  font-size: var(--text-3xl);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--track-snug);
+  color: var(--fg);
+}
+.h2 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-semibold);
+  font-size: var(--text-2xl);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--track-snug);
+  color: var(--fg);
+}
+.h3 {
+  font-family: var(--font-sans);
+  font-weight: var(--weight-semibold);
+  font-size: var(--text-xl);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--track-snug);
+  color: var(--fg);
+}
+.h4 {
+  font-family: var(--font-sans);
+  font-weight: var(--weight-semibold);
+  font-size: var(--text-lg);
+  line-height: var(--lh-snug);
+  color: var(--fg);
+}
+.eyebrow {
+  font-family: var(--font-sans);
+  font-weight: var(--weight-medium);
+  font-size: var(--text-xs);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+.lede {
+  font-family: var(--font-sans);
+  font-weight: var(--weight-regular);
+  font-size: var(--text-md);
+  line-height: var(--lh-relaxed);
+  color: var(--fg-muted);
+}
+.body {
+  font-family: var(--font-sans);
+  font-weight: var(--weight-regular);
+  font-size: var(--text-base);
+  line-height: var(--lh-normal);
+  color: var(--fg);
+}
+.body-sm {
+  font-family: var(--font-sans);
+  font-weight: var(--weight-regular);
+  font-size: var(--text-sm);
+  line-height: var(--lh-normal);
+  color: var(--fg);
+}
+.caption {
+  font-family: var(--font-sans);
+  font-weight: var(--weight-regular);
+  font-size: var(--text-xs);
+  line-height: var(--lh-normal);
+  color: var(--fg-muted);
+}
+.mono {
+  font-family: var(--font-mono);
+  font-weight: var(--weight-regular);
+  font-size: var(--text-sm);
+  line-height: var(--lh-normal);
+  letter-spacing: 0;
+}
+.label {
+  font-family: var(--font-sans);
+  font-weight: var(--weight-medium);
+  font-size: var(--text-sm);
+  line-height: var(--lh-snug);
+  color: var(--fg);
+}
+
+/* =========================================================
+   BASELINE RESET
+   ========================================================= */
+html, body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--fg);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
