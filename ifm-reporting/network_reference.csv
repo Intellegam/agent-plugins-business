@@ -1,0 +1,98 @@
+group,brand_label,country_label,franchise,data_countries,network
+Hyundai,Hyundai,Austria,Hyundai,Austria,123
+Hyundai,Hyundai,Belgium,Hyundai,Belgium,79
+Hyundai,Hyundai,Croatia,Hyundai,Croatia,17
+Hyundai,Hyundai,Denmark,Hyundai,Denmark,53
+Hyundai,Hyundai,Estonia,Hyundai,Estonia,10
+Hyundai,Hyundai,Finland,Hyundai,Finland,52
+Hyundai,Hyundai,Greece,Hyundai,Greece,47
+Hyundai,Hyundai,Ireland,Hyundai,Ireland,31
+Hyundai,Hyundai,Latvia,Hyundai,Latvia,3
+Hyundai,Hyundai,Lithuania,Hyundai,Lithuania,5
+Hyundai,Hyundai,Luxembourg,Hyundai,Luxembourg,4
+Hyundai,Hyundai,Netherlands,Hyundai,Netherlands,64
+Hyundai,Hyundai,Norway,Hyundai,Norway,61
+Hyundai,Hyundai,Portugal,Hyundai,Portugal,43
+Hyundai,Hyundai,Spain,Hyundai,Spain,74
+Hyundai,Hyundai,Sweden,Hyundai,Sweden,66
+Hyundai,Hyundai,Switzerland,Hyundai,Switzerland,105
+Isuzu,Isuzu,Belgium,Isuzu,Belgium,28
+Isuzu,Isuzu,Luxembourg,Isuzu,Luxembourg,2
+Isuzu,Isuzu,Sweden,Isuzu,Sweden,76
+Isuzu,Isuzu,United Kingdom,Isuzu,United Kingdom,99
+Kia,Kia,Austria,Kia,Austria,100
+Kia,Kia,Belgium,Kia,Belgium,65
+Kia,Kia,Czech Republic,Kia,Czech Republic,59
+Kia,Kia,Denmark,Kia,Denmark,56
+Kia,Kia,Estonia,Kia,Estonia,13
+Kia,Kia,Finland,Kia,Finland,49
+Kia,Kia,France,Kia,France,224
+Kia,Kia,Germany,Kia,Germany,410
+Kia,Kia,Greece,Kia,Greece,44
+Kia,Kia,Hungary,Kia,Hungary,31
+Kia,Kia,Ireland,Kia,Ireland,34
+Kia,Kia,Italy,Kia,Italy,201
+Kia,Kia,Latvia,Kia,Latvia,6
+Kia,Kia,Lithuania,Kia,Lithuania,7
+Kia,Kia,Luxembourg,Kia,Luxembourg,4
+Kia,Kia,Norway,Kia,Norway,76
+Kia,Kia,Poland,Kia,Poland,69
+Kia,Kia,Portugal,Kia,Portugal,42
+Kia,Kia,Slovak Republic,Kia,Slovak Republic,33
+Kia,Kia,South Africa,Kia,South Africa,80
+Kia,Kia,Spain,Kia,Spain,182
+Kia,Kia,Sweden,Kia,Sweden,81
+Kia,Kia,Switzerland,Kia,Switzerland,120
+Kia,Kia,United Kingdom,Kia,United Kingdom,202
+Mitsubishi,Mitsubishi,Denmark,Mitsubishi,Denmark,17
+Mitsubishi,Mitsubishi,Finland,Mitsubishi,Finland,47
+Mitsubishi,Mitsubishi,Germany,Mitsubishi,Germany,482
+Mitsubishi,Mitsubishi,Sweden,Mitsubishi,Sweden,55
+Mitsubishi,Mitsubishi,United Kingdom,Mitsubishi,United Kingdom,104
+Nissan,Nissan,Austria,Nissan,Austria,104
+Nissan,Nissan,Belgium (RBU),Nissan,Belgium,58
+Nissan,Nissan,Czech Republic,Nissan,Czech Republic,25
+Nissan,Nissan,Denmark (RBU),Nissan,Denmark,48
+Nissan,Nissan,Estonia,Nissan,Estonia,7
+Nissan,Nissan,Finland,Nissan,Finland,49
+Nissan,Nissan,France (RBU),Nissan,France,223
+Nissan,Nissan,Germany (RBU),Nissan,Germany,453
+Nissan,Nissan,Hungary,Nissan,Hungary,37
+Nissan,Nissan,Ireland,Nissan,Ireland,32
+Nissan,Nissan,Italy (RBU),Nissan,Italy,147
+Nissan,Nissan,Latvia,Nissan,Latvia,4
+Nissan,Nissan,Lithuania,Nissan,Lithuania,5
+Nissan,Nissan,Luxembourg (RBU),Nissan,Luxembourg,5
+Nissan,Nissan,Netherlands (RBU),Nissan,Netherlands,78
+Nissan,Nissan,Norway (RBU),Nissan,Norway,52
+Nissan,Nissan,Poland,Nissan,Poland,51
+Nissan,Nissan,Portugal,Nissan,Portugal,36
+Nissan,Nissan,Slovak Republic,Nissan,Slovak Republic,16
+Nissan,Nissan,Spain (RBU),Nissan,Spain,162
+Nissan,Nissan,Sweden (RBU),Nissan,Sweden,89
+Nissan,Nissan,Switzerland,Nissan,Switzerland,62
+Nissan,Nissan,Ukraine (RBU),Nissan,Ukraine,28
+Nissan,Nissan,United Kingdom (RBU),Nissan,United Kingdom,200
+Other Brands,ORA/Havel,Baltic States,Ora,Estonia|Latvia|Lithuania,7
+Other Brands,ORA/Havel,Ireland,Ora,Ireland,7
+Other Brands,ORA/Havel,Sweden,Ora,Sweden,16
+Other Brands,ORA/Havel,United Kingdom,Ora,United Kingdom,50
+Other Brands,Great Wall,United Kingdom,Great Wall,United Kingdom,44
+Other Brands,KGM,Belgium,Ssangyong,Belgium,32
+Other Brands,KGM,Luxembourg,Ssangyong,Luxembourg,1
+Other Brands,Maxus,Belgium,Maxus,Belgium,26
+Other Brands,Maxus,Luxembourg,Maxus,Luxembourg,5
+Other Brands,MG,Belgium,Mg,Belgium,34
+Subaru,Subaru,Denmark,Subaru,Denmark,11
+Subaru,Subaru,Estonia,Subaru,Estonia,6
+Subaru,Subaru,Finland,Subaru,Finland,25
+Subaru,Subaru,Latvia,Subaru,Latvia,4
+Subaru,Subaru,Lithuania,Subaru,Lithuania,4
+Subaru,Subaru,Norway,Subaru,Norway,46
+Subaru,Subaru,Sweden,Subaru,Sweden,92
+Subaru,Subaru,United Kingdom,Subaru,United Kingdom,59
+Suzuki,Suzuki,Belgium,Suzuki,Belgium,78
+Suzuki,Suzuki,Denmark,Suzuki,Denmark,85
+Suzuki,Suzuki,France,Suzuki,France,220
+Suzuki,Suzuki,Luxembourg,Suzuki,Luxembourg,4
+Suzuki,Suzuki,Sweden,Suzuki,Sweden,57
